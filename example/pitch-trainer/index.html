@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音准测试 Demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>音准测试（Web MVP）</h1>
+      <p class="subtitle">先做 Web，后续可迁移小程序（核心算法与数据结构可复用）</p>
+
+      <section class="card controls">
+        <label for="songSelect">选择歌曲：</label>
+        <select id="songSelect"></select>
+        <button id="startBtn">开始测试</button>
+        <button id="stopBtn" disabled>停止</button>
+      </section>
+
+      <section class="card status-grid">
+        <div>
+          <p class="label">当前目标音</p>
+          <p id="targetNote" class="value">-</p>
+        </div>
+        <div>
+          <p class="label">你当前音高</p>
+          <p id="detectedNote" class="value">-</p>
+        </div>
+        <div>
+          <p class="label">偏差（cents）</p>
+          <p id="cents" class="value">-</p>
+        </div>
+        <div>
+          <p class="label">实时判定</p>
+          <p id="judge" class="value">等待开始</p>
+        </div>
+      </section>
+
+      <section class="card progress-wrap">
+        <p class="label">完成进度</p>
+        <progress id="progress" max="100" value="0"></progress>
+      </section>
+
+      <section class="card result">
+        <h2>结果</h2>
+        <p>总分：<span id="totalScore">-</span></p>
+        <p>音准稳定度：<span id="stability">-</span></p>
+        <p>建议：<span id="advice">-</span></p>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
